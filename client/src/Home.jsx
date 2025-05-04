@@ -11,13 +11,13 @@ function Home() {
   const [todos, setTodo] = useState([]);
   useEffect(() => {
     axios
-      .get(`${import.meta.env.Vite_Backend_URL}/get`)
+      .get(`https://mern-deploy-server-red.vercel.app/get`)
       .then((result) => setTodo(result.data))
       .catch((err) => console.log(err));
   }, []);
   const HandleEdit = (id) => {
     axios
-      .put(`${import.meta.env.Vite_Backend_URL}/update/${id}`)
+      .put(`https://mern-deploy-server-red.vercel.app/${id}`)
       .then(() => {
         setTodo((prevTodos) =>
           prevTodos.map((todo) =>
@@ -29,7 +29,7 @@ function Home() {
   };
   const DeleteRecord = (id) => {
     axios
-      .delete(`${import.meta.env.Vite_Backend_URL}/delete/${id}`)
+      .delete(`https://mern-deploy-server-red.vercel.app/delete/${id}`)
       .then(() => {
         setTodo((prev) => prev.filter((todo) => todo._id !== id));
       })

@@ -9,6 +9,7 @@ import {
 
 function Home() {
   const [todos, setTodo] = useState([]);
+  axios.defaults.withCredentials = true; 
   useEffect(() => {
     axios
       .get(`https://mern-deploy-server-red.vercel.app/get`)

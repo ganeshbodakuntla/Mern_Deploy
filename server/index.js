@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: ["https://mern-deploy-frontend-two.vercel.app"],
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
 );

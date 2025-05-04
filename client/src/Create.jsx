@@ -5,7 +5,7 @@ function Create() {
   const [task, setTask] = useState();
   const handleSubmit = () => {
     axios
-      .post(`${import.meta.env.Vite_Backend_URL}/add`, { task: task })
+      .post(`https://mern-deploy-server-red.vercel.app/add`, { task: task })
       .then(() => {
         location.reload();
       })

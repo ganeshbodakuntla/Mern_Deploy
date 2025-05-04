@@ -3,6 +3,7 @@ import axios from "axios";
 
 function Create() {
   const [task, setTask] = useState();
+  axios.defaults.withCredentials = true; 
   const handleSubmit = () => {
     axios
       .post(`https://mern-deploy-server-red.vercel.app/add`, { task: task })
